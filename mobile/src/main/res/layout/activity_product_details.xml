@@ -11,11 +11,11 @@
         android:id="@+id/materialTabHost"
         app:iconColor="@color/amber_50"
         app:primaryColor="@color/colorPrimary"
-        app:accentColor="@color/colorPrimaryDark"
+        app:accentColor="@color/amber_50"
         app:hasIcons="true"
         android:elevation="5dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="56dp" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"

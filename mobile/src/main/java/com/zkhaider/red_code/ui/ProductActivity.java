@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,12 @@ public class ProductActivity extends ActionBarActivity implements MaterialTabLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product_details);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
+
+        setupUI();
     }
 
 
@@ -47,6 +54,7 @@ public class ProductActivity extends ActionBarActivity implements MaterialTabLis
         viewPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), this);
 
         materialTabs = new MaterialTab[viewPagerAdapter.getCount()];
+        setupTabs();
 
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

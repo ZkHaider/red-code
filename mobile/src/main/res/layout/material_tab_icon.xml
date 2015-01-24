@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <at.markushi.ui.RevealColorView
+    <com.zkhaider.red_code.revealcolor.RevealColorView
 		android:id="@+id/reveal"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
