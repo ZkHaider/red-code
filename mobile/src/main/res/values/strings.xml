@@ -9,6 +9,8 @@
     <integer name="viewfinder_border_width">4</integer>
     <integer name="viewfinder_border_length">60</integer>
 
+    <string name="tutorial">Start reviewing by tapping the Scan Action Button!</string>
+
     <string name="barcode">Barcode Scanner</string>
     <string name="qrcode">QRcode Scanner</string>
 
