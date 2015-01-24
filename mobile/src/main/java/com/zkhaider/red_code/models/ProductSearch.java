@@ -5,14 +5,12 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by kcoleman on 1/24/15.
  */
-public class ProductDetails {
-    @SerializedName("ProductDetail")
-    String productDetail;
+public class ProductSearch {
+    @SerializedName("SearchResults")
+    private String mResults;
 
-
-    public String getName()
+    public String getPid()
     {
-        return "name";
+        return "PID";
     }
-
 }
