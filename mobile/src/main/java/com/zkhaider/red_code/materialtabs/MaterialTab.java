@@ -18,6 +18,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zkhaider.red_code.R;
+import com.zkhaider.red_code.revealcolor.RevealColorView;
+
 @SuppressLint({ "InflateParams", "ClickableViewAccessibility" })
 /**
  * A simple Tab with Material Design style
