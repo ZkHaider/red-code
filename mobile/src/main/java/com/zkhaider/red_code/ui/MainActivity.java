@@ -1,5 +1,7 @@
 package com.zkhaider.red_code.ui;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -35,7 +37,10 @@ public class MainActivity extends ActionBarActivity {
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Do something here
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.scanContainer, SimpleScannerFragment.newInstance());
+                ft.commit();
             }
         });
 

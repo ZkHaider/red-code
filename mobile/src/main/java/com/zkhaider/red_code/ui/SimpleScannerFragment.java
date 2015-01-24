@@ -10,12 +10,22 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 import com.zkhaider.red_code.zxing.ZXingScannerView;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Haider on 1/24/2015.
  */
 public class SimpleScannerFragment extends Fragment implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
+    private static SimpleScannerFragment fragment;
+
+    public static Fragment newInstance() {
+        if (fragment == null) {
+            fragment = new SimpleScannerFragment();
+        }
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
