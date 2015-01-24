@@ -1,0 +1,73 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="start_z">2dp</dimen>
+    <dimen name="end_z">5dp</dimen>
+
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+
+    <dimen name="fab_icon_size">24dp</dimen>
+
+    <dimen name="fab_plus_icon_size">14dp</dimen>
+    <dimen name="fab_plus_icon_stroke">2dp</dimen>
+
+    <dimen name="fab_shadow_offset">3dp</dimen>
+    <dimen name="fab_shadow_radius">9dp</dimen>
+
+    <dimen name="fab_stroke_width">0.5dp</dimen>
+
+    <dimen name="fab_actions_spacing">16dp</dimen>
+    <dimen name="fab_labels_margin">8dp</dimen>
+    <!-- Material Tab dimensions -->
+    <dimen name="tabhostHeight">48dp</dimen>
+    <dimen name="tabSelectorHeight">2dp</dimen>
+    <dimen name="materialTextTab">14sp</dimen>
+
+    <!-- Main Profile Buttons -->
+    <dimen name="mainProfileButtonSize">56dp</dimen>
+
+    <!-- See http://www.google.com/design/spec/components/dialogs.html#dialogs-specs -->
+    <!-- Margin around the dialog, excluding the button bar -->
+    <dimen name="md_dialog_frame_margin">24dp</dimen>
+    <dimen name="md_title_frame_margin_bottom">16dp</dimen>
+    <dimen name="md_title_frame_margin_bottom_list">4dp</dimen>
+    <!-- 64dp + 8dp (left and right insets) -->
+    <dimen name="md_button_min_width">72dp</dimen>
+    <!-- Above and below buttons, 36+12=48 for the height of the button frame -->
+    <dimen name="md_button_inset_vertical">6dp</dimen>
+    <dimen name="md_button_inset_horizontal">4dp</dimen>
+    <dimen name="md_button_padding_horizontal">8dp</dimen>
+    <dimen name="md_button_padding_vertical">4dp</dimen>
+    <dimen name="md_button_padding_horizontal_internalexternal">32dp</dimen>
+    <!-- 16dp - 4dp (inset) -->
+    <dimen name="md_button_padding_frame_side">12dp</dimen>
+    <dimen name="md_neutral_button_margin">12dp</dimen>
+    <!-- Applied to content scrollview/listview and customview, the spec calls for 16dp between the
+             bottom of the content and the top of the button bar, we split this between the two for
+             ease of layouts and adjustments. Likewise the spec implies 16dp between the title and
+             content and we split that as well.
+
+             Splitting makes it easier to have consistent padding against the dividers.
+             -->
+    <dimen name="md_content_vertical_padding">8dp</dimen>
+    <dimen name="md_button_frame_vertical_padding">8dp</dimen>
+    <dimen name="md_button_height">48dp</dimen>
+    <dimen name="md_title_textsize">20sp</dimen>
+    <dimen name="md_content_textsize">18sp</dimen>
+    <dimen name="md_button_textsize">14sp</dimen>
+    <dimen name="md_listitem_textsize">18sp</dimen>
+    <dimen name="md_listitem_height">52dp</dimen>
+    <dimen name="md_listitem_control_margin">16dp</dimen>
+    <dimen name="md_icon_margin">16dp</dimen>
+    <dimen name="md_listitem_margin_left">24dp</dimen>
+    <dimen name="md_action_corner_radius">2dp</dimen>
+
+    <!-- Floating Action Button Dimensions -->
+    <dimen name="elevation_low">1dp</dimen>
+    <dimen name="elevation_high">5dp</dimen>
+
+</resources>
