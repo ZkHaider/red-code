@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
 
 
-    <zkhaider.com.happinessproject.ui.materialtabs.MaterialTabHost
+    <com.zkhaider.red_code.materialtabs.MaterialTabHost
         android:id="@+id/materialTabHost"
-        app:iconColor="@android:color/white"
+        app:iconColor="@color/amber_50"
         app:primaryColor="@color/colorPrimary"
-        app:accentColor="@color/colorAccent"
+        app:accentColor="@color/colorPrimaryDark"
         app:hasIcons="true"
         android:elevation="5dp"
         android:layout_width="match_parent"
