@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.scanContainer, SimpleScannerFragment.newInstance());
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
         });

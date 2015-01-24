@@ -10,6 +10,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- Accent color for the items in the app -->
         <item name="colorAccent">#fb8c00</item>
+
+        <item name="elevation">0dp</item>
+
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="MD_Light" parent="Theme_Light_Dialog" />

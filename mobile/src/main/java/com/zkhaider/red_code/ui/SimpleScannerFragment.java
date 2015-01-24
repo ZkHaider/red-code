@@ -1,16 +1,14 @@
 package com.zkhaider.red_code.ui;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.zxing.Result;
 import com.zkhaider.red_code.zxing.ZXingScannerView;
-
-import java.text.SimpleDateFormat;
 
 /**
  * Created by Haider on 1/24/2015.
@@ -42,9 +40,9 @@ public class SimpleScannerFragment extends Fragment implements ZXingScannerView.
 
     @Override
     public void handleResult(Result rawResult) {
-        Toast.makeText(getActivity(), "Contents = " + rawResult.getText() +
-                ", Format = " + rawResult.getBarcodeFormat().toString(), Toast.LENGTH_SHORT).show();
-        mScannerView.startCamera();
+        Intent i = new Intent(getActivity(), ProductActivity.class);
+        startActivity(i);
+        //mScannerView.startCamera();
     }
 
     @Override
