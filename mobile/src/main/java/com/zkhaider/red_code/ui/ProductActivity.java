@@ -9,7 +9,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.elasticode.ElastiCode;
 import com.zkhaider.red_code.R;
+import com.zkhaider.red_code.materialdialogs.MaterialDialog;
 import com.zkhaider.red_code.materialtabs.MaterialTab;
 import com.zkhaider.red_code.materialtabs.MaterialTabHost;
 import com.zkhaider.red_code.materialtabs.MaterialTabListener;
@@ -41,6 +43,10 @@ class ProductActivity extends ActionBarActivity implements MaterialTabListener {
         setContentView(R.layout.activity_product_details);
 
         code = getIntent().getStringExtra("code");
+
+        ElastiCode.event("PID Number: " + code + " was scanned");
+
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);
@@ -133,6 +139,25 @@ class ProductActivity extends ActionBarActivity implements MaterialTabListener {
             materialTabHost.setActivated(true);
             materialTabHost.setClickable(true);
         }
+
+        new MaterialDialog.Builder(this)
+                .title(R.string.materialTitle)
+                .content(R.string.materialContent)
+                .positiveText(R.string.materialAgree)
+                .negativeText(R.string.materialDisagree)
+                .icon(R.drawable.ic_elasticode)
+                .callback(new MaterialDialog.ButtonCallback() {
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        super.onPositive(dialog);
+                    }
+
+                    @Override
+                    public void onNegative(MaterialDialog dialog) {
+                        super.onNegative(dialog);
+                    }
+                })
+                .show();
     }
 
     private void unregisterMaterialTabHost() {

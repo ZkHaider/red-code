@@ -14,14 +14,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.elasticode.ElastiCode;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.zkhaider.red_code.R;
 import com.zkhaider.red_code.fab.FloatingActionButton;
 import com.zkhaider.red_code.fab.FloatingActionMenu;
 
+import java.util.Observable;
+import java.util.Observer;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    public static final String ELASTICODE_KEY = "sf04o2sy8pfcdu93ii2dpmvd";
 
     /*
     AppStart variabes
@@ -58,6 +64,27 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom_fragment_capture);
+
+        Observer obs = new Observer() {
+            @Override
+            public void update(Observable observable, Object data) {
+                // If we got true then startSession was finished
+                // Else restartSession
+                if ((Boolean)data) {
+                    // Add code here for defining the cases / dynamic objects
+                    // and continue wiht the app flow
+                } else {
+                    // Elasticode was updated may want to refresh the screen UI
+                }
+            }
+        };
+        ElastiCode.devModeWithLogging();
+
+        ElastiCode.startSession(ELASTICODE_KEY, obs, this);
+
+        ElastiCode.setConnectionTimeout(2000);
+        ElastiCode.setSOConnectionTimeout(4000);
+
 
         scanButton = (ImageButton) findViewById(R.id.scanButton);
         scanButton.setOnClickListener(new View.OnClickListener() {
