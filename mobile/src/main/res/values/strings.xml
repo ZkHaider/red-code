@@ -14,5 +14,7 @@
     <string name="barcode">Barcode Scanner</string>
     <string name="qrcode">QRcode Scanner</string>
 
+    <string name="productTitle">Product Details</string>
+
 
 </resources>

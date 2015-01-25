@@ -2,7 +2,9 @@ package com.zkhaider.red_code.ui;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -20,6 +22,30 @@ import com.zkhaider.red_code.fab.FloatingActionMenu;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    /*
+    AppStart variabes
+     */
+    // Setup ENUM which will check to see if the user is starting new, latest version, or normal
+    public enum  AppStart {
+        FIRST_TIME, FIRST_TIME_VERSION, NORMAL;
+    }
+
+    /*
+    App version code not the version name, used on the last start of the app
+    */
+    private final String LAST_APP_VERSION = "last_app_version";
+
+    /*
+    Cache the result of checkAppStart()
+     */
+    private AppStart appStart = null;
+
+    /*
+    Variables initialized below
+     */
+    private Context context;
+    private SharedPreferences preferences;
 
     public static final String TAG = "MainActivity";
 
