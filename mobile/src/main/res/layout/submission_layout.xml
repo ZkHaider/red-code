@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/amber_50"
     android:orientation="vertical">
+
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editText"
-        android:background="@color/purple_400"
+        android:background="@color/amber_50"
         android:textAlignment="viewStart"
         android:textColor="@color/accent_material_dark" />
+
+    <ImageButton
+        android:id="@+id/submitButton"
+        android:background="@drawable/ripple"
+        android:src="@drawable/ic_send"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|right" />
+
+    <!--
 
     <Button
         android:layout_width="match_parent"
@@ -18,6 +34,9 @@
         android:text="Submit Review"
         android:id="@+id/button"
         android:layout_gravity="bottom" />
+
+
+        -->
 
 
 </LinearLayout>
