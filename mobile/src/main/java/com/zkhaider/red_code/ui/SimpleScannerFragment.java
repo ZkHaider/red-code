@@ -3,6 +3,7 @@ package com.zkhaider.red_code.ui;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,9 @@ public class SimpleScannerFragment extends Fragment implements ZXingScannerView.
     @Override
     public void handleResult(Result rawResult) {
         Intent i = new Intent(getActivity(), ProductActivity.class);
+        Log.d(".raw.",rawResult.toString());
+        Log.d(".raw.",rawResult.toString());
+        Log.d(".raw.",rawResult.toString());
         i.putExtra("code",rawResult.toString());
         startActivity(i);
         //mScannerView.startCamera();

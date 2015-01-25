@@ -53,8 +53,7 @@ public class SearsClient {
 
     public static SearsClient get(Context context)
     {
-        if (sSearsClient == null)
-        {
+        if (sSearsClient == null) {
             sSearsClient = new SearsClient(context);
         }
         return sSearsClient;

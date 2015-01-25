@@ -68,8 +68,16 @@ public class ProductDetailsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        code = ((ProductActivity)getActivity()).code;
-
+        code = ((ProductActivity)getActivity()).getCode();
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
+        Log.d("..", code);
         new FetchProductDetailsTask().execute();
     }
 
@@ -125,21 +133,12 @@ public class ProductDetailsFragment extends Fragment {
 
             products = productSearch.getSearchResults().getProducts();
 
-            if (products != null) {
-                productListSize = products.size();
-            }
-
-            if (products == null) {
-                Toast.makeText(getActivity(), "This product was not found", Toast.LENGTH_LONG).show();
-            } else {
-
                 String partNumber = productSearch.getSearchResults().getProducts().get(0).getId().getPartNumber();
 
                 Log.d(".pid.", partNumber);
 
 
                 mProductDetails = service.getProductDetails(partNumber);
-            }
 
             return null;
         }

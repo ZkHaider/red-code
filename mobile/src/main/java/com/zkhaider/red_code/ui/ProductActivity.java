@@ -48,6 +48,11 @@ class ProductActivity extends ActionBarActivity implements MaterialTabListener {
         setupUI();
     }
 
+    public String getCode()
+    {
+        return code;
+    }
+
 
     public void setupUI() {
         // Grab resources

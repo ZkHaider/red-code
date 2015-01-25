@@ -54,7 +54,7 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mReviews.size();
     }
 
     public static class RatingsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
