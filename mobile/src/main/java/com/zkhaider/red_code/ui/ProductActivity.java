@@ -3,6 +3,7 @@ package com.zkhaider.red_code.ui;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -140,21 +141,33 @@ class ProductActivity extends ActionBarActivity implements MaterialTabListener {
             materialTabHost.setClickable(true);
         }
 
+
+
         new MaterialDialog.Builder(this)
                 .title(R.string.materialTitle)
                 .content(R.string.materialContent)
                 .positiveText(R.string.materialAgree)
                 .negativeText(R.string.materialDisagree)
-                .icon(R.drawable.ic_elasticode)
+                .icon(R.drawable.ic_elasticode_logo_fixed)
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         super.onPositive(dialog);
+
+                        String android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                                Settings.Secure.ANDROID_ID);
+
+                        ElastiCode.event("User: " + android_id + " is interested.");
                     }
 
                     @Override
                     public void onNegative(MaterialDialog dialog) {
                         super.onNegative(dialog);
+
+                        String android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                                Settings.Secure.ANDROID_ID);
+
+                        ElastiCode.event("User: " + android_id + " is not interested.");
                     }
                 })
                 .show();
