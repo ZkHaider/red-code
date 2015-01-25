@@ -2,6 +2,7 @@ package com.zkhaider.red_code.services;
 
 
 import retrofit.RestAdapter;
+import retrofit.RetrofitError;
 import retrofit.http.Path;
 import retrofit.http.Query;
         import retrofit.http.GET;
@@ -9,6 +10,7 @@ import retrofit.http.Query;
 
         import android.content.Context;
         import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.zkhaider.red_code.models.ProductDetails;
 import com.zkhaider.red_code.models.ProductSearch;
@@ -19,33 +21,28 @@ import com.zkhaider.red_code.models.ProductSearch;
 
 public class SearsClient {
 
-    private static String TAG = "io.sparkstart.atl_startup.AtlantaStartupJobsClient";
-    private static String PREFS_NAME = "ATLStartup";
     private static SearsClient sSearsClient;
-    private static final String API_URL = "http://api.developer.sears.com/v2.1/";
+    private static final String API_URL = "http://api.developer.sears.com/v2.1";
 
-    private static String mAPIKey;
     private static RestAdapter mRestAdapter;
-    private static Context mContext;
 
     interface IProductDetails {
         @GET("/products/details/Sears/json/{id}")
-        ProductDetails getProductDetails(@Path("id") String id, @Query("api_key") String api_key);
+        ProductDetails getProductDetails(@Path("id") String id, @Query("apikey") String api_key);
     }
 
     interface IProductSearch {
         @GET("/products/search/Sears/json/keyword/{code}")
-        ProductSearch getProductSearch(@Path("code") String id, @Query("api_key") String api_key);
+        ProductSearch getProductSearch(@Path("code") String id, @Query("apikey") String api_key);
     }
 
     private SearsClient(Context context)
     {
         mRestAdapter = new RestAdapter.Builder()
                 .setEndpoint(API_URL)
-                .setLogLevel(RestAdapter.LogLevel.NONE)
+                .setLogLevel(RestAdapter.LogLevel.BASIC)
                 .build();
 
-        mContext = context;
     }
 
     public static SearsClient get(Context context)
@@ -66,7 +63,16 @@ public class SearsClient {
     public ProductSearch getProductSearch(String code)
     {
         IProductSearch productSearch = mRestAdapter.create(IProductSearch.class);
-        return productSearch.getProductSearch(code, getAPIKey());
+
+        ProductSearch ps = new ProductSearch();
+
+        try {
+            ps = productSearch.getProductSearch(code, getAPIKey());
+        } catch (RetrofitError e) {
+            Log.d(".retro.", e.toString());
+        }
+
+        return ps;
     }
 
     private String getAPIKey()
@@ -74,3 +80,4 @@ public class SearsClient {
         return "85WogFIkPnyNG4pHQ18wE8LUsr4tuCtG";
     }
 }
+

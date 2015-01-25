@@ -7,12 +7,11 @@ import com.google.gson.annotations.SerializedName;
  */
 public class ProductDetails {
     @SerializedName("ProductDetail")
-    String productDetail;
+    private ProductDetail mProductDetail;
 
-
-    public String getName()
+    public ProductDetail getProductDetail()
     {
-        return "name";
+        return mProductDetail;
     }
 
 }

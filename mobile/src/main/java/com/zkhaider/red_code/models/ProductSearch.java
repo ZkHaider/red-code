@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName;
  */
 public class ProductSearch {
     @SerializedName("SearchResults")
-    private String mResults;
+    private SearchResults mSearchResults;
 
-    public String getPid()
+    public SearchResults getSearchResults()
     {
-        return "PID";
+        return mSearchResults;
     }
 }
