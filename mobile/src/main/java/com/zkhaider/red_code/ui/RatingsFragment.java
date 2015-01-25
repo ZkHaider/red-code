@@ -127,7 +127,7 @@ public class RatingsFragment extends Fragment {
                 Log.d(".pid.", partNumber);
 
                 ReviewsClient reviewsService = ReviewsClient.get(getActivity());
-                mReviews = reviewsService.getProductRating(code).getData().getReviews();
+                mReviews = reviewsService.getProductRating(partNumber).getData().getReviews();
 
 
             }
