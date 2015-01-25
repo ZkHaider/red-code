@@ -96,6 +96,9 @@ public class RatingsFragment extends Fragment {
         // specify an adapter (see also next example)
         Context context = getActivity();
 
+        double score = 3.5;
+
+        changeStarIcons(score);
 
 
         return root;
