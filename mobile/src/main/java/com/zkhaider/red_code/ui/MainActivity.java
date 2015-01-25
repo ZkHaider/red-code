@@ -68,8 +68,12 @@ public class MainActivity extends ActionBarActivity {
                 ft.replace(R.id.scanContainer, SimpleScannerFragment.newInstance());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
+
+                scanButton.setVisibility(View.GONE);
             }
         });
+
+
 
     }
 

@@ -12,6 +12,7 @@ import retrofit.http.Query;
         import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.zkhaider.red_code.models.Price;
 import com.zkhaider.red_code.models.ProductDetails;
 import com.zkhaider.red_code.models.ProductSearch;
 
@@ -34,6 +35,11 @@ public class SearsClient {
     interface IProductSearch {
         @GET("/products/search/Sears/json/keyword/{code}")
         ProductSearch getProductSearch(@Path("code") String id, @Query("apikey") String api_key);
+    }
+
+    interface IPriceSearch {
+        @GET("/products/details/Sears/json/{id}")
+        Price getPrice(@Path("id") String id, @Query("apikey") String api_key);
     }
 
     private SearsClient(Context context)
@@ -73,6 +79,13 @@ public class SearsClient {
         }
 
         return ps;
+    }
+
+    public Price getPrice(String id) {
+
+        IPriceSearch priceSearch = mRestAdapter.create(IPriceSearch.class);
+
+        return priceSearch.getPrice(id, getAPIKey());
     }
 
     private String getAPIKey()
