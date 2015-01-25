@@ -50,7 +50,7 @@ public class SubmissionFragment extends Fragment {
                             @Override
                             public void onPositive(MaterialDialog dialog) {
                                 super.onPositive(dialog);
-                                
+
                                 String android_id = Settings.Secure.getString(getActivity().getContentResolver(),
                                         Settings.Secure.ANDROID_ID);
 
