@@ -10,13 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.zkhaider.red_code.R;
 import com.zkhaider.red_code.models.Price;
+import com.zkhaider.red_code.models.Product;
 import com.zkhaider.red_code.models.ProductDetails;
 import com.zkhaider.red_code.models.ProductSearch;
 import com.zkhaider.red_code.services.SearsClient;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Haider on 1/24/2015.
@@ -26,6 +31,8 @@ public class ProductDetailsFragment extends Fragment {
     public static final String TAG = ProductDetailsFragment.class.getSimpleName();
 
     private static ProductDetailsFragment fragment;
+    private List<Product> products;
+    private int productListSize;
     private String code;
     private ProductDetails mProductDetails;
     private Price price;
@@ -111,12 +118,25 @@ public class ProductDetailsFragment extends Fragment {
             ProductSearch productSearch = service.getProductSearch(code);
             Log.d(".number.",code);
 
-            String partNumber = productSearch.getSearchResults().getProducts().get(0).getId().getPartNumber();
+            products = productSearch.getSearchResults().getProducts();
 
-            Log.d(".pid.",partNumber);
+            if (products != null) {
+                productListSize = products.size();
+            }
 
-            mProductDetails = service.getProductDetails(partNumber);
-            price = service.getPrice(partNumber);
+            if (products == null) {
+                Toast.makeText(getActivity(), "This product was not found", Toast.LENGTH_LONG).show();
+            } else {
+
+                String partNumber = productSearch.getSearchResults().getProducts().get(0).getId().getPartNumber();
+
+                Log.d(".pid.", partNumber);
+
+
+                mProductDetails = service.getProductDetails(partNumber);
+                price = service.getPrice(partNumber);
+
+            }
 
             return null;
         }
@@ -124,7 +144,9 @@ public class ProductDetailsFragment extends Fragment {
         @Override
         protected void onPostExecute(Void a)
         {
-            setupFragment();
+            if (products != null) {
+                setupFragment();
+            }
         }
     }
 }
