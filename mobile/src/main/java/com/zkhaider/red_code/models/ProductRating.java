@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName;
  */
 public class ProductRating {
     @SerializedName("Data")
-    private Data mData;
+    private OverallRating mData;
 
-    public Data getData()
+    public OverallRating getData()
     {
         return mData;
     }

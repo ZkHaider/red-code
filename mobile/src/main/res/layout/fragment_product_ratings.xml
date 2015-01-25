@@ -7,6 +7,54 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:text="@string/overallRating"
+        android:textColor="@color/grey_500"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/star1"
+            android:src="@drawable/ic_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/star2"
+            android:src="@drawable/ic_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/star3"
+            android:src="@drawable/ic_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/star4"
+            android:src="@drawable/ic_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/star5"
+            android:src="@drawable/ic_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    <TextView
         android:text="@string/ratingsTitle"
         android:textColor="@color/grey_500"
         android:textSize="16sp"
