@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.zkhaider.red_code.R;
@@ -35,6 +36,14 @@ public class RatingsFragment extends Fragment {
     private List<Product> products;
     private List<Review> mReviews;
     private int productListSize;
+
+    // Star icons
+    private ImageView star1;
+    private ImageView star2;
+    private ImageView star3;
+    private ImageView star4;
+    private ImageView star5;
+
 
     private String code;
 
@@ -62,6 +71,13 @@ public class RatingsFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_product_ratings, null);
 
+        // Declare the stars by Id
+        star1 = (ImageView) root.findViewById(R.id.star1);
+        star2 = (ImageView) root.findViewById(R.id.star2);
+        star3 = (ImageView) root.findViewById(R.id.star3);
+        star4 = (ImageView) root.findViewById(R.id.star4);
+        star5 = (ImageView) root.findViewById(R.id.star5);
+
         recyclerView = (RecyclerView) root.findViewById(R.id.ratings_recycler_view);
 
         // Add Item Decoration
@@ -83,6 +99,79 @@ public class RatingsFragment extends Fragment {
 
 
         return root;
+    }
+
+
+    private void changeStarIcons(double score) {
+
+        if (score == 0) {
+            star1.setImageResource(R.drawable.ic_toggle_star_outline);
+            star2.setImageResource(R.drawable.ic_toggle_star_outline);
+            star3.setImageResource(R.drawable.ic_toggle_star_outline);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score < 0) {
+            star1.setImageResource(R.drawable.ic_toggle_star_half);
+            star2.setImageResource(R.drawable.ic_toggle_star_outline);
+            star3.setImageResource(R.drawable.ic_toggle_star_outline);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 1) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star_outline);
+            star3.setImageResource(R.drawable.ic_toggle_star_outline);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score < 2 && score > 1) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star_half);
+            star3.setImageResource(R.drawable.ic_toggle_star_outline);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 2) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star_outline);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 2 && score < 3) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star_half);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 3) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star);
+            star4.setImageResource(R.drawable.ic_toggle_star_outline);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 3 && score < 4) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star);
+            star4.setImageResource(R.drawable.ic_toggle_star_half);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 4) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star);
+            star4.setImageResource(R.drawable.ic_toggle_star);
+            star5.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 4 && score < 5) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star);
+            star4.setImageResource(R.drawable.ic_toggle_star);
+            star5.setImageResource(R.drawable.ic_toggle_star_half);
+        } else if (score == 5) {
+            star1.setImageResource(R.drawable.ic_toggle_star);
+            star2.setImageResource(R.drawable.ic_toggle_star);
+            star3.setImageResource(R.drawable.ic_toggle_star);
+            star4.setImageResource(R.drawable.ic_toggle_star);
+            star5.setImageResource(R.drawable.ic_toggle_star);
+        }
+
     }
 
     @Override
