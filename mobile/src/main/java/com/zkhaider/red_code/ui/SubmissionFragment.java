@@ -45,12 +45,12 @@ public class SubmissionFragment extends Fragment {
                         .icon(R.drawable.ic_elasticode_logo_fixed)
                         .content(R.string.reviewContent)
                         .positiveText(R.string.reviewAgree)
-                        .icon(R.drawable.ic_barcode_icon)
+                        .icon(R.drawable.ic_elasticode_logo_fixed)
                         .callback(new MaterialDialog.ButtonCallback() {
                             @Override
                             public void onPositive(MaterialDialog dialog) {
                                 super.onPositive(dialog);
-
+                                
                                 String android_id = Settings.Secure.getString(getActivity().getContentResolver(),
                                         Settings.Secure.ANDROID_ID);
 
