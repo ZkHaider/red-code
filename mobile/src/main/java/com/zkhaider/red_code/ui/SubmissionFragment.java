@@ -1,6 +1,7 @@
 package com.zkhaider.red_code.ui;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.elasticode.ElastiCode;
 import com.zkhaider.red_code.R;
 import com.zkhaider.red_code.materialdialogs.MaterialDialog;
 
@@ -44,6 +46,17 @@ public class SubmissionFragment extends Fragment {
                         .content(R.string.materialContent)
                         .positiveText(R.string.materialAgree)
                         .icon(R.drawable.ic_barcode_icon)
+                        .callback(new MaterialDialog.ButtonCallback() {
+                            @Override
+                            public void onPositive(MaterialDialog dialog) {
+                                super.onPositive(dialog);
+
+                                String android_id = Settings.Secure.getString(getActivity().getContentResolver(),
+                                        Settings.Secure.ANDROID_ID);
+
+                                ElastiCode.event("User: " + android_id + " is interested.");
+                            }
+                        })
                         .show();
             }
         });
