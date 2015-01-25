@@ -52,6 +52,8 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
 
         ratingsViewHolder.vSubtitle.setText(mReviews.get(i).getSummary());
 
+        ratingsViewHolder.vDescription.setText(mReviews.get(i).getContent());
+
         double score = Double.parseDouble(mReviews.get(i).getAttributeRating().get(0).getValue());
 
         if (score == 0) {
@@ -153,7 +155,6 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
 
             v.setOnClickListener(this);
 
-            ratingsStars = (ImageView) v.findViewById(R.id.ratingsStarIcon);
             vSubtitle = (TextView) v.findViewById(R.id.subtitle);
             vDescription = (TextView) v.findViewById(R.id.description);
 
