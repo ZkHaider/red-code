@@ -38,12 +38,13 @@ public class SubmissionFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                new MaterialDialog.Builder(getActivity())
-//                        .title(R.string.materialTitle)
-//                        .content(R.string.materialContent)
-//                        .positiveText(R.string.materialAgree)
-//                        .icon(R.drawable.ic_barcode_icon)
-//                        .show();
+                new MaterialDialog.Builder(getActivity())
+                        .title(R.string.materialTitle)
+                        .icon(R.drawable.ic_elasticode_logo_fixed)
+                        .content(R.string.materialContent)
+                        .positiveText(R.string.materialAgree)
+                        .icon(R.drawable.ic_barcode_icon)
+                        .show();
             }
         });
 
