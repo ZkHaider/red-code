@@ -1,7 +1,6 @@
 package com.zkhaider.red_code.ui;
 
 
-import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,8 +17,6 @@ import com.zkhaider.red_code.models.Price;
 import com.zkhaider.red_code.models.ProductDetails;
 import com.zkhaider.red_code.models.ProductSearch;
 import com.zkhaider.red_code.services.SearsClient;
-
-import java.net.URL;
 
 /**
  * Created by Haider on 1/24/2015.
@@ -51,7 +48,7 @@ public class ProductDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_product_detals, null);
+        View root = inflater.inflate(R.layout.fragment_product_details, null);
 
         image = (ImageView) root.findViewById(R.id.imageUrl);
         mBrandName = (TextView) root.findViewById(R.id.brandName);
