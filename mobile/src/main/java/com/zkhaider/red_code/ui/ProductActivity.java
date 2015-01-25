@@ -32,10 +32,14 @@ public class ProductActivity extends ActionBarActivity implements MaterialTabLis
     private MainPagerAdapter viewPagerAdapter;
     private Resources res;
 
+    protected String code;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
+
+        code = getIntent().getStringExtra("code");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);

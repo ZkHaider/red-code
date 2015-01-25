@@ -41,6 +41,7 @@ public class SimpleScannerFragment extends Fragment implements ZXingScannerView.
     @Override
     public void handleResult(Result rawResult) {
         Intent i = new Intent(getActivity(), ProductActivity.class);
+        i.putExtra("code",rawResult.toString());
         startActivity(i);
         //mScannerView.startCamera();
     }
