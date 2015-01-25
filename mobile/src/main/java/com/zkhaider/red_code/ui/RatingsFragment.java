@@ -63,7 +63,7 @@ public class RatingsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         code = ((ProductActivity)getActivity()).code;
 
-        //new FetchProductRatingsTask().execute();
+        new FetchProductRatingsTask().execute();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class RatingsFragment extends Fragment {
             }
 
             if (products == null) {
-                Toast.makeText(getActivity(), "This product was not found", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "This product was not found", Toast.LENGTH_LONG).show();
             } else {
 
                 String partNumber = productSearch.getSearchResults().getProducts().get(0).getId().getPartNumber();
@@ -216,8 +216,7 @@ public class RatingsFragment extends Fragment {
                 Log.d(".pid.", partNumber);
 
                 ReviewsClient reviewsService = ReviewsClient.get(getActivity());
-                mReviews = reviewsService.getProductRating(code).getData().getReviews();
-
+                mReviews = reviewsService.getProductRating(partNumber).getData().getReviews();
 
             }
             mAdapter = new RatingsAdapter(mReviews);

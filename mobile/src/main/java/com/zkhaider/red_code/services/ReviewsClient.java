@@ -29,7 +29,7 @@ public class ReviewsClient {
     {
         mRestAdapter = new RestAdapter.Builder()
                 .setEndpoint(API_URL)
-                .setLogLevel(RestAdapter.LogLevel.BASIC)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
     }
 
