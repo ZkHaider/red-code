@@ -1,48 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/amber_50"
     android:orientation="vertical">
 
 
-    <com.zkhaider.red_code.floatingedittext.FloatLabeledEditText
-        android:layout_width="match_parent"
-        android:layout_margin="16dp"
-        android:layout_height="400dp">
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="match_parent"
             android:background="@color/amber_50"
             android:ems="10"
+            android:layout_marginTop="8dp"
             android:inputType="textMultiLine"
             android:textAlignment="viewStart"
             android:textColor="@color/grey_700" />
 
-    </com.zkhaider.red_code.floatingedittext.FloatLabeledEditText>
+    <TextView
+        android:layout_margin="16dp"
+        android:textSize="18sp"
+        android:id="@+id/writeSubmissionTextView"
+        android:text="Write a submission"
+        android:textColor="@color/grey_500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <ImageButton
         android:id="@+id/submitButton"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_gravity="bottom|right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:background="@drawable/ripple"
         android:src="@drawable/ic_send" />
 
-    <!--
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit Review"
-        android:id="@+id/button"
-        android:layout_gravity="bottom" />
-
-
-        -->
-
-
-</LinearLayout>
+</RelativeLayout>
