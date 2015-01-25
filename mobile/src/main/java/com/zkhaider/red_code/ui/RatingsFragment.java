@@ -61,7 +61,7 @@ public class RatingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        code = ((ProductActivity)getActivity()).code;
+        code = ((ProductActivity)getActivity()).getCode();
 
         new FetchProductRatingsTask().execute();
     }

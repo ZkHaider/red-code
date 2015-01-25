@@ -2,6 +2,8 @@ package com.zkhaider.red_code.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
  * Created by kcoleman on 1/25/15.
  */
@@ -16,13 +18,13 @@ public class Review {
     private String mSummary;
 
     @SerializedName("attribute_rating")
-    private AttributeRating mAttributeRating;
+    private List<AttributeRating> mAttributeRating;
 
     public Author getAuthor()
     {
         return mAuthor;
     }
-    public AttributeRating getAttributeRating()
+    public List<AttributeRating> getAttributeRating()
     {
         return mAttributeRating;
     }
