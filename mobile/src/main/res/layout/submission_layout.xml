@@ -6,25 +6,31 @@
     android:orientation="vertical">
 
 
-
-    <EditText
+    <com.zkhaider.red_code.floatingedittext.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:background="@color/amber_50"
-        android:textAlignment="viewStart"
-        android:textColor="@color/accent_material_dark" />
+        android:layout_margin="16dp"
+        android:layout_height="400dp">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@color/amber_50"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:textAlignment="viewStart"
+            android:textColor="@color/grey_700" />
+
+    </com.zkhaider.red_code.floatingedittext.FloatLabeledEditText>
 
     <ImageButton
         android:id="@+id/submitButton"
-        android:background="@drawable/ripple"
-        android:src="@drawable/ic_send"
         android:layout_width="56dp"
         android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:layout_gravity="bottom|right" />
+        android:background="@drawable/ripple"
+        android:src="@drawable/ic_send" />
 
     <!--
 
