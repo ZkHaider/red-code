@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.zkhaider.red_code.models.ProductRating;
 
+import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -21,15 +22,24 @@ public class ReviewsClient {
 
     interface IProductRatings {
         @GET("/ratings/single/search/Sears/{id}")
-        ProductRating getProductRating(@Path("id") String id, @Query("apikey") String api_key);
+        ProductRating getProductRating(@Path("id") String id);
     }
 
 
     private ReviewsClient(Context context)
     {
+
+        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+            @Override
+            public void intercept(RequestFacade request) {
+                request.addHeader("User-Agent", "Retrofit-Sample-App");
+            }
+        };
+
         mRestAdapter = new RestAdapter.Builder()
                 .setEndpoint(API_URL)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setRequestInterceptor(requestInterceptor)
                 .build();
     }
 
@@ -45,11 +55,6 @@ public class ReviewsClient {
     public ProductRating getProductRating(String id)
     {
         IProductRatings productDetails = mRestAdapter.create(IProductRatings.class);
-        return productDetails.getProductRating(id, getAPIKey());
-    }
-
-    private String getAPIKey()
-    {
-        return "85WogFIkPnyNG4pHQ18wE8LUsr4tuCtG";
+        return productDetails.getProductRating(id);
     }
 }

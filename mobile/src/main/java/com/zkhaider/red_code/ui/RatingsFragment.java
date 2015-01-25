@@ -122,11 +122,17 @@ public class RatingsFragment extends Fragment {
                 //Toast.makeText(getActivity(), "This product was not found", Toast.LENGTH_LONG).show();
             } else {
 
-                String partNumber = productSearch.getSearchResults().getProducts().get(0).getId().getPartNumber();
+                String partNumber = products.get(0).getId().getPartNumber();
 
                 Log.d(".pid.", partNumber);
 
                 ReviewsClient reviewsService = ReviewsClient.get(getActivity());
+                Log.d("......", "HERRRR");
+                Log.d("......", "HERRRR");
+                Log.d("......", "HERRRR");
+                Log.d("......", "HERRRR");
+                Log.d("......", "HERRRR");
+                Log.d("......", "HERRRR");
                 mReviews = reviewsService.getProductRating(partNumber).getData().getReviews();
 
             }

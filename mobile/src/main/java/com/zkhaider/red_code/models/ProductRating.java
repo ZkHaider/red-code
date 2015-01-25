@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ProductRating {
 
-    @SerializedName("Data")
+    @SerializedName("data")
     private Data mData;
     public Data getData()
     {
