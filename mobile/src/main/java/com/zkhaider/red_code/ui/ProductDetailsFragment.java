@@ -36,7 +36,7 @@ public class ProductDetailsFragment extends Fragment {
         new FetchProductDetailsTask().execute();
     }
 
-    private void setupAdapter()
+    private void setupFragment()
     {
 
     }
@@ -55,24 +55,15 @@ public class ProductDetailsFragment extends Fragment {
 
             Log.d(".pid.",partNumber);
 
-            ProductDetails productDetails = service.getProductDetails(partNumber);
-            String name = productDetails.getProductDetail().getSoftHardProductDetails().getDescription().getDescriptionName();
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
-            Log.d(".name.",name);
+            mProductDetails = service.getProductDetails(partNumber);
+
             return null;
         }
 
         @Override
         protected void onPostExecute(Void a)
         {
-            setupAdapter();
+            setupFragment();
         }
     }
 }
