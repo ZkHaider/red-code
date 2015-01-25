@@ -48,8 +48,8 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
 
     @Override
     public void onBindViewHolder(RatingsViewHolder sessionViewHolder, int i) {
-
         sessionViewHolder.vSubtitle.setText(mReviews.get(i).getSummary());
+        sessionViewHolder.vDescription.setText(mReviews.get(i).getContent());
     }
 
     @Override

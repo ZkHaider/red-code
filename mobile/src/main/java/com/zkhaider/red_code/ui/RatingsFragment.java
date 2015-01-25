@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.zkhaider.red_code.R;
 import com.zkhaider.red_code.models.Product;
+import com.zkhaider.red_code.models.ProductRating;
 import com.zkhaider.red_code.models.ProductSearch;
 import com.zkhaider.red_code.models.Review;
 import com.zkhaider.red_code.services.ReviewsClient;
@@ -225,7 +226,9 @@ public class RatingsFragment extends Fragment {
                 Log.d("......", "HERRRR");
                 Log.d("......", "HERRRR");
                 Log.d("......", "HERRRR");
-                mReviews = reviewsService.getProductRating(partNumber).getData().getReviews();
+                ProductRating pr = reviewsService.getProductRating(partNumber);
+                mReviews = pr.getData().getReviews();
+                changeStarIcons(Double.valueOf(pr.getData().getoverall_rating()));
 
             }
             mAdapter = new RatingsAdapter(mReviews);
