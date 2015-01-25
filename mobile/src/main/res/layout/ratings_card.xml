@@ -11,19 +11,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ratingsStarIcon"
+
+        <LinearLayout
+            android:id="@+id/starContainer"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp"
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/star1Ind"
+                android:src="@drawable/ic_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/star2Ind"
+                android:src="@drawable/ic_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/star3Ind"
+                android:src="@drawable/ic_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/star4Ind"
+                android:src="@drawable/ic_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/star5Ind"
+                android:src="@drawable/ic_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/subtitle"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:layout_marginTop="8dp"
             android:textColor="@color/grey_700"
             android:layout_marginLeft="16dp"
-            android:layout_below="@id/ratingsStarIcon"
+            android:textStyle="bold"
+            android:layout_below="@id/starContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -32,7 +68,9 @@
             android:layout_below="@id/subtitle"
             android:layout_marginTop="5dp"
             android:textColor="@color/grey_700"
-            android:textSize="12sp"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:minHeight="100dp"/>

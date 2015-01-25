@@ -28,6 +28,7 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
     private Context mContext;
     private List<Review> mReviews;
 
+
     GestureDetector gestureDetector;
 
     public RatingsAdapter(List<Review> reviews) {
@@ -47,10 +48,82 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
     }
 
     @Override
-    public void onBindViewHolder(RatingsViewHolder sessionViewHolder, int i) {
+    public void onBindViewHolder(RatingsViewHolder ratingsViewHolder, int i) {
 
-        sessionViewHolder.vSubtitle.setText(mReviews.get(i).getSummary());
+        ratingsViewHolder.vSubtitle.setText(mReviews.get(i).getSummary());
+
+        double score = Double.parseDouble(mReviews.get(i).getAttributeRating().get(0).getValue());
+
+        if (score == 0) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score < 0) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star_half);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 1) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score < 2 && score > 1) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star_half);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 2) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 2 && score < 3) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star_half);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 3) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 3 && score < 4) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star_half);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score == 4) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_outline);
+        } else if (score > 4 && score < 5) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star_half);
+        } else if (score == 5) {
+            ratingsViewHolder.star1Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star2Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star3Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star4Ind.setImageResource(R.drawable.ic_toggle_star);
+            ratingsViewHolder.star5Ind.setImageResource(R.drawable.ic_toggle_star);
+        }
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -62,6 +135,14 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
         protected ImageView ratingsStars;
         protected TextView vSubtitle;
         protected TextView vDescription;
+
+        // Star icons
+        public ImageView star1Ind;
+        public ImageView star2Ind;
+        public ImageView star3Ind;
+        public ImageView star4Ind;
+        public ImageView star5Ind;
+
 
         // Variables for View
         private int originalHeight = 0;
@@ -75,6 +156,12 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
             ratingsStars = (ImageView) v.findViewById(R.id.ratingsStarIcon);
             vSubtitle = (TextView) v.findViewById(R.id.subtitle);
             vDescription = (TextView) v.findViewById(R.id.description);
+
+            star1Ind = (ImageView) v.findViewById(R.id.star1Ind);
+            star2Ind = (ImageView) v.findViewById(R.id.star2Ind);
+            star3Ind = (ImageView) v.findViewById(R.id.star3Ind);
+            star4Ind = (ImageView) v.findViewById(R.id.star4Ind);
+            star5Ind = (ImageView) v.findViewById(R.id.star5Ind);
 
             if (mIsViewExpanded == false) {
                 vDescription.setEnabled(false);

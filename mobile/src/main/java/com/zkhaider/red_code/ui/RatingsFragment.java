@@ -44,7 +44,6 @@ public class RatingsFragment extends Fragment {
     private ImageView star4;
     private ImageView star5;
 
-
     private String code;
 
     private String overallRating;
@@ -77,6 +76,7 @@ public class RatingsFragment extends Fragment {
         star3 = (ImageView) root.findViewById(R.id.star3);
         star4 = (ImageView) root.findViewById(R.id.star4);
         star5 = (ImageView) root.findViewById(R.id.star5);
+
 
         recyclerView = (RecyclerView) root.findViewById(R.id.ratings_recycler_view);
 
@@ -176,6 +176,7 @@ public class RatingsFragment extends Fragment {
         }
 
     }
+
 
     @Override
     public void onResume() {
