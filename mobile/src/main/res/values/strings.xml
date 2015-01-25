@@ -16,5 +16,7 @@
 
     <string name="productTitle">Product Details</string>
 
+    <string name="ratingsTitle"></string>
+
 
 </resources>
