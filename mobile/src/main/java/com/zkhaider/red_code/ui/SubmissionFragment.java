@@ -5,10 +5,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zkhaider.red_code.R;
+import com.zkhaider.red_code.materialdialogs.MaterialDialog;
 
 /**
  * Created by Haider on 1/24/2015.
@@ -16,6 +18,8 @@ import com.zkhaider.red_code.R;
 public class SubmissionFragment extends Fragment {
 
     private static SubmissionFragment fragment;
+
+    private ImageButton fab;
 
     public static Fragment newInstance() {
         if (fragment == null) {
@@ -28,6 +32,20 @@ public class SubmissionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.submission_layout, null);
+
+        fab = (ImageButton) root.findViewById(R.id.submitButton);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                new MaterialDialog.Builder(getActivity())
+//                        .title(R.string.materialTitle)
+//                        .content(R.string.materialContent)
+//                        .positiveText(R.string.materialAgree)
+//                        .icon(R.drawable.ic_barcode_icon)
+//                        .show();
+            }
+        });
 
         return root;
     }

@@ -13,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@color/amber_50"
+        android:background="@android:color/white"
         android:ems="10"
         android:inputType="textMultiLine"
         android:textAlignment="viewStart"

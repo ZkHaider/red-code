@@ -19,5 +19,9 @@
     <string name="ratingsTitle">Ratings</string>
     <string name="overallRating">Overall Rating</string>
 
+    <string name="materialTitle">Review Submitted</string>
+    <string name="materialContent">Thanks for submitting your review to help other sears customers!</string>
+    <string name="materialAgree">Ok</string>
+
 
 </resources>
