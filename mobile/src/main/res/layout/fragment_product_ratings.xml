@@ -7,7 +7,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text=""
+        android:text="@string/ratingsTitle"
+        android:textColor="@color/grey_700"
+        android:textSize="16sp"
+        android:layout_margin="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
