@@ -128,6 +128,7 @@ public class RatingsFragment extends Fragment {
 
                 reviewsService.getProductRating(code);
 
+
             }
 
             return null;
