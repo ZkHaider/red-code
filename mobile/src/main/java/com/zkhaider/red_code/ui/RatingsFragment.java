@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.zkhaider.red_code.R;
 import com.zkhaider.red_code.models.Product;
 import com.zkhaider.red_code.models.ProductSearch;
+import com.zkhaider.red_code.models.Review;
 import com.zkhaider.red_code.services.ReviewsClient;
 import com.zkhaider.red_code.services.SearsClient;
 import com.zkhaider.red_code.ui.adapters.RatingsAdapter;
@@ -32,6 +33,7 @@ public class RatingsFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     private List<Product> products;
+    private List<Review> mReviews;
     private int productListSize;
 
     private String code;
@@ -77,8 +79,7 @@ public class RatingsFragment extends Fragment {
         // specify an adapter (see also next example)
         Context context = getActivity();
 
-        mAdapter = new RatingsAdapter();
-        recyclerView.setAdapter(mAdapter);
+
 
         return root;
     }
@@ -125,12 +126,13 @@ public class RatingsFragment extends Fragment {
                 Log.d(".pid.", partNumber);
 
                 ReviewsClient reviewsService = ReviewsClient.get(getActivity());
-
-                reviewsService.getProductRating(code);
+                mReviews = reviewsService.getProductRating(code).getData().getReviews();
 
 
             }
-
+            mAdapter = new RatingsAdapter(mReviews);
+            recyclerView.setAdapter(mAdapter);
+            recyclerView.invalidate();
             return null;
         }
 

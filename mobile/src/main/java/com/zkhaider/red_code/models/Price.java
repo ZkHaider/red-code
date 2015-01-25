@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Price {
     @SerializedName("SalePrice")
-
     private String mSalePrice;
 
     public String getSalePrice()
