@@ -10,6 +10,8 @@ public class Description {
     private String mDescriptionName;
     @SerializedName("Images")
     private Images mImages;
+    @SerializedName("BrandName")
+    private String mBrandName;
 
     public Images getImages()
     {
@@ -19,5 +21,9 @@ public class Description {
     public String getDescriptionName()
     {
         return mDescriptionName;
+    }
+    public String getBrandName()
+    {
+        return mBrandName;
     }
 }

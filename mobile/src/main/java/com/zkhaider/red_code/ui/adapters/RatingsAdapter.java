@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zkhaider.red_code.R;
+import com.zkhaider.red_code.models.Review;
 
 import java.util.List;
 
@@ -25,11 +26,12 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
 
     private Resources res;
     private Context mContext;
-    private int score;
+    private List<Review> mReviews;
 
     GestureDetector gestureDetector;
 
-    public RatingsAdapter() {
+    public RatingsAdapter(List<Review> reviews) {
+        mReviews = reviews;
     }
 
     @Override
@@ -47,68 +49,7 @@ public class RatingsAdapter extends RecyclerView.Adapter<RatingsAdapter.RatingsV
     @Override
     public void onBindViewHolder(RatingsViewHolder sessionViewHolder, int i) {
 
-        // Set the circleIcon color to its score indicator
-        if (score >= 80) {
-//
-//            mContext = mIcon.getContext();
-//
-//            mIcon.setBackground(res.getDrawable(R.drawable.circle_bad));
-//
-//            // Set Transformation
-//            Transformation transformation = new RoundedTransformationBuilder()
-//                    .borderColor(res.getColor(R.color.red_700))
-//                    .borderWidthDp(10)
-//                    .cornerRadiusDp(50)
-//                    .oval(false)
-//                    .build();
-//
-//            Picasso.with(mContext)
-//                    .load(R.drawable.ic_bad_score)
-//                    .fit()
-//                    .transform(transformation)
-//                    .into(mIcon);
-        }
-
-        if (score < 80 && score >= 20) {
-//            mContext = mIcon.getContext();
-//
-//            // Set ImageView background color
-//            mIcon.setBackground(res.getDrawable(R.drawable.circle_average));
-//
-//            // Set Transformation
-//            Transformation transformation = new RoundedTransformationBuilder()
-//                    .borderColor(res.getColor(R.color.yellow_700))
-//                    .borderWidthDp(10)
-//                    .cornerRadiusDp(50)
-//                    .oval(false)
-//                    .build();
-//
-//            Picasso.with(mContext)
-//                    .load(R.drawable.ic_average_score)
-//                    .fit()
-//                    .transform(transformation)
-//                    .into(mIcon);
-        }
-        if (score < 20) {
-//            mContext = mIcon.getContext();
-//
-//            // Set ImageView background color
-//            mIcon.setBackground(res.getDrawable(R.drawable.circle_good));
-//
-//            // Set Transformation
-//            Transformation transformation = new RoundedTransformationBuilder()
-//                    .borderColor(res.getColor(R.color.light_green_700))
-//                    .borderWidthDp(10)
-//                    .cornerRadiusDp(50)
-//                    .oval(false)
-//                    .build();
-//
-//            Picasso.with(mContext)
-//                    .load(R.drawable.ic_good_score)
-//                    .fit()
-//                    .transform(transformation)
-//                    .into(mIcon);
-        }
+        sessionViewHolder.vSubtitle.setText(mReviews.get(i).getSummary());
     }
 
     @Override

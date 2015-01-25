@@ -18,7 +18,8 @@ import com.zkhaider.red_code.ui.adapters.MainPagerAdapter;
 /**
  * Created by Haider on 1/24/2015.
  */
-public class ProductActivity extends ActionBarActivity implements MaterialTabListener {
+public
+class ProductActivity extends ActionBarActivity implements MaterialTabListener {
 
     public static final String TAG = ProductActivity.class.getSimpleName();
 

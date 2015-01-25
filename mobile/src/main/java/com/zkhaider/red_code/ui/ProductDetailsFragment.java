@@ -38,8 +38,8 @@ public class ProductDetailsFragment extends Fragment {
     private Price price;
 
     /*
-    UI Elements
-     */
+      UI Elements
+    */
     private ImageView image;
     private TextView mBrandName;
     private TextView mProductName;
@@ -61,8 +61,6 @@ public class ProductDetailsFragment extends Fragment {
         mBrandName = (TextView) root.findViewById(R.id.brandName);
         mProductName = (TextView) root.findViewById(R.id.productName);
         mPrice = (TextView) root.findViewById(R.id.productPriceNumber);
-
-
 
         return root;
     }
@@ -98,13 +96,20 @@ public class ProductDetailsFragment extends Fragment {
                 .getDescription()
                 .getDescriptionName();
 
+        String tempBrand = mProductDetails
+                .getProductDetail()
+                .getSoftHardProductDetails()
+                .getDescription()
+                .getBrandName();
+
         Log.d(TAG, "ProductName: " + tempName);
         mProductName.setText(tempName);
 
 
-        String tempPrice = price.getSalePrice();
+        String tempPrice = mProductDetails.getProductDetail().getSoftHardProductDetails().getPrice().getSalePrice();
         Log.d(TAG, "TempPrice: " + tempPrice);
-        mPrice.setText(tempPrice);
+        mPrice.setText("$"+tempPrice);
+        mBrandName.setText(tempBrand);
 
     }
 
@@ -134,8 +139,6 @@ public class ProductDetailsFragment extends Fragment {
 
 
                 mProductDetails = service.getProductDetails(partNumber);
-                price = service.getPrice(partNumber);
-
             }
 
             return null;
