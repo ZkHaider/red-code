@@ -41,10 +41,10 @@ public class SubmissionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 new MaterialDialog.Builder(getActivity())
-                        .title(R.string.materialTitle)
+                        .title(R.string.reviewTitle)
                         .icon(R.drawable.ic_elasticode_logo_fixed)
-                        .content(R.string.materialContent)
-                        .positiveText(R.string.materialAgree)
+                        .content(R.string.reviewContent)
+                        .positiveText(R.string.reviewAgree)
                         .icon(R.drawable.ic_barcode_icon)
                         .callback(new MaterialDialog.ButtonCallback() {
                             @Override

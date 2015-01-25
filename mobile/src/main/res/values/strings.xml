@@ -24,6 +24,10 @@
     <string name="materialAgree">Yes</string>
     <string name="materialDisagree">No</string>
 
+    <string name="reviewTitle">Review</string>
+    <string name="reviewContent">Thank you for submitting the review to Elasticode</string>
+    <string name="reviewAgree">Ok</string>
+
     <string name="elasticode_app_id">sf04o2sy8pfcdu93ii2dpmvd</string>
 
 
